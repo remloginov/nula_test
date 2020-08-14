@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_08_14_145732) do
+ActiveRecord::Schema.define(version: 2020_08_14_161948) do
 
   create_table "ico_infos", force: :cascade do |t|
     t.text "data_xml"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "ico"
   end
 
 end
