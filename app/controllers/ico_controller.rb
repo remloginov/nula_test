@@ -2,12 +2,20 @@ class IcoController < ApplicationController
 
     def show
         @company = IcoInfo.find_by(ico: params[:ico])
-        render 'show'
+        if (@company.nil?)
+          render 'welcome'
+        else
+          render 'show'
+        end
+        
     end
+
   
     private
   
-    def icos_params
-      params.permit(:ico)
-    end
+    # Strong parameters, that permits only specified attributes.
+  def event_params
+    params.require(:ico)
+          .permit(:ico)
+  end
 end
