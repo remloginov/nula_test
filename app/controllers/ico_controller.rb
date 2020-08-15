@@ -3,7 +3,7 @@ class IcoController < ApplicationController
     def show
         @company = IcoInfo.find_by(ico: params[:ico])
         if (@company.nil?)
-          render 'welcome'
+          render 'not_found'
         else
           render 'show'
         end
